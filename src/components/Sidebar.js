@@ -34,13 +34,15 @@ const Sidebar = () => {
 const styles = {
   sideBarContainer: {
     backgroundColor: '#323232',
-    height: windowHeight / 1.2,
-    width: 80,
+    height: windowHeight / 1.1,
+    width: '6%',
     borderRadius: 12,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     paddingBlock: '2%',
+    position: 'sticky',
+    top: '1%'
   },
   logo: {
     objectFit: 'contain',

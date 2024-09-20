@@ -42,7 +42,7 @@ const Header = () => {
         >
           Modules
         </Button>
-        <Avatar alt="Remy Sharp" src={require('../images/avatar_1.png')} />
+        <Avatar alt="avatar" src={require('../images/avatar_1.png')} />
       </Stack>
     </Box>
   );
