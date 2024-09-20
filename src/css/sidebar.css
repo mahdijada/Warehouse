@@ -1,0 +1,10 @@
+.container {
+  background-color: '#323232';
+  height: 883;
+  width: 80;
+  border-radius: 12;
+  display: 'flex';
+  flex-direction: 'column';
+  align-items: 'center';
+  padding-block: '2%'
+}
