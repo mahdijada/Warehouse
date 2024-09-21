@@ -8,13 +8,14 @@ import Header from "../components/Header";
 import Weather from "../components/Weather";
 import { pieChartData } from '../data';
 import Site from "../components/Site";
+import { windowHeight } from "../common";
 
 const DashboardScreen = () => {
   return (
     <Box style={{ display: 'flex' }}>
-      <Sidebar />
+      <Sidebar position="sticky" />
       <Container>
-        <Header />
+        <Header screenName="Realtime Dashboard" />
         <Grid style={{ marginTop: '2%' }} container>
           <Grid item md={4} xs={12} style={{ position: 'relative', marginBottom: '5%' }}>
             <Box style={styles.imageLayer} />

@@ -7,9 +7,12 @@ import {
   SmartDisplayOutlined,
   WorkOutline
 } from "@mui/icons-material";
+import { useNavigate } from 'react-router-dom'
 import { windowHeight } from "../common";
 
-const Sidebar = () => {
+const Sidebar = ({ position, zIndex, setShowEmergencyDetails }) => {
+  const navigate = useNavigate();
+
   const data = [
     { iconName: 'Home', icon: <HomeOutlined style={styles.iconStyle} /> },
     { iconName: 'Realtime', icon: <FeedOutlined style={styles.iconStyle} /> },
@@ -17,12 +20,21 @@ const Sidebar = () => {
     { iconName: 'Devices', icon: <WorkOutline style={styles.iconStyle} /> },
     { iconName: 'Realtime', icon: <FeedOutlined style={styles.iconStyle} /> },
     { iconName: 'Settings', icon: <SmartDisplayOutlined style={styles.iconStyle} /> },
-  ]
+  ];
+
+  const onClickItem = (iconName) => {
+    if (iconName === 'Home') {
+      navigate('/')
+    } else if (iconName === 'Events') {
+      setShowEmergencyDetails(true)
+    }
+  }
+
   return (
-    <Box style={styles.sideBarContainer}>
+    <Box style={{ ...styles.sideBarContainer, position: position, zIndex: zIndex }}>
       <img src={require('../images/logo.png')} alt="logo" style={styles.logo} />
       {data.map((item) => (
-        <IconButton style={styles.iconButton}>
+        <IconButton onClick={() => onClickItem(item.iconName)} style={styles.iconButton}>
           {item.icon}
           <Typography style={styles.iconText}>{item.iconName}</Typography>
         </IconButton>
@@ -41,7 +53,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     paddingBlock: '2%',
-    position: 'sticky',
+    left: '1%',
     top: '1%'
   },
   logo: {

@@ -11,17 +11,18 @@ import {
 } from '@mui/material';
 import { GridView, NotificationsOutlined, Search } from "@mui/icons-material";
 
-const Header = () => {
+const Header = ({ screenName, position, zIndex, left, top, titleMarginLeft }) => {
   const [searchValue, setSearchValue] = useState('');
   return (
-    <Box style={styles.container}>
-      <Typography style={styles.title}>Realtime Dashboard</Typography>
+    <Box style={{ ...styles.container, position: position, zIndex: zIndex, left: left, top: top }}>
+      <Typography style={{ ...styles.title, marginLeft: titleMarginLeft }}>{screenName}</Typography>
       <Stack direction="row" spacing={2} style={{ alignItems: 'center' }}>
         <TextField
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
           variant='outlined'
           placeholder="Search..."
+          size="small"
           style={styles.searchBarContainer}
           InputProps={{
             startAdornment: (
@@ -52,7 +53,8 @@ const styles = {
   container: {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    width: '93%'
   },
   title: {
     color: '#FFFFFF',
