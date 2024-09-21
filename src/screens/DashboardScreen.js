@@ -15,7 +15,7 @@ const DashboardScreen = () => {
     <Box style={{ display: 'flex' }}>
       <Sidebar position="sticky" />
       <Container>
-        <Header screenName="Realtime Dashboard" />
+        <Header screenName="Realtime Dashboard" color="#FFFFFF" />
         <Grid style={{ marginTop: '2%' }} container>
           <Grid item md={4} xs={12} style={{ position: 'relative', marginBottom: '5%' }}>
             <Box style={styles.imageLayer} />

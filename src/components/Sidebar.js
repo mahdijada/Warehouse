@@ -10,7 +10,7 @@ import {
 import { useNavigate } from 'react-router-dom'
 import { windowHeight } from "../common";
 
-const Sidebar = ({ position, zIndex, setShowEmergencyDetails }) => {
+const Sidebar = ({ position, zIndex, showEmergencyDetails, setShowEmergencyDetails }) => {
   const navigate = useNavigate();
 
   const data = [
@@ -26,7 +26,7 @@ const Sidebar = ({ position, zIndex, setShowEmergencyDetails }) => {
     if (iconName === 'Home') {
       navigate('/')
     } else if (iconName === 'Events') {
-      setShowEmergencyDetails(true)
+      setShowEmergencyDetails(!showEmergencyDetails)
     }
   }
 

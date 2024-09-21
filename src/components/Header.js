@@ -11,11 +11,11 @@ import {
 } from '@mui/material';
 import { GridView, NotificationsOutlined, Search } from "@mui/icons-material";
 
-const Header = ({ screenName, position, zIndex, left, top, titleMarginLeft }) => {
+const Header = ({ screenName, position, zIndex, left, top, titleMarginLeft, color }) => {
   const [searchValue, setSearchValue] = useState('');
   return (
     <Box style={{ ...styles.container, position: position, zIndex: zIndex, left: left, top: top }}>
-      <Typography style={{ ...styles.title, marginLeft: titleMarginLeft }}>{screenName}</Typography>
+      <Typography style={{ ...styles.title, marginLeft: titleMarginLeft, color: color }}>{screenName}</Typography>
       <Stack direction="row" spacing={2} style={{ alignItems: 'center' }}>
         <TextField
           value={searchValue}
@@ -57,7 +57,6 @@ const styles = {
     width: '93%'
   },
   title: {
-    color: '#FFFFFF',
     fontSize: '1.3em',
     marginTop: '2%'
   },
