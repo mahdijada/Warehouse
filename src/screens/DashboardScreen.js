@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Avatar, Box, Container, Divider, Grid, IconButton, Stack, Typography } from '@mui/material';
 import { ArrowDownward, ArrowUpward, ErrorOutlineOutlined, FiberManualRecord, InfoOutlined, ReportProblemOutlined, Square, } from "@mui/icons-material";
 import { LineChart } from '@mui/x-charts/LineChart';
@@ -8,12 +9,13 @@ import Header from "../components/Header";
 import Weather from "../components/Weather";
 import { pieChartData } from '../data';
 import Site from "../components/Site";
-import { windowHeight } from "../common";
+import { useNavigate } from 'react-router-dom'
 
 const DashboardScreen = () => {
+  const navigate = useNavigate();
   return (
     <Box style={{ display: 'flex' }}>
-      <Sidebar position="sticky" />
+      <Sidebar setShowEmergencyDetails={() => navigate('/emergency')} position="sticky" />
       <Container>
         <Header screenName="Realtime Dashboard" color="#FFFFFF" />
         <Grid style={{ marginTop: '2%' }} container>

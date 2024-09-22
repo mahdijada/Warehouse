@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, IconButton, Typography } from '@mui/material';
 import {
+  Dns,
   FeedOutlined,
   HomeOutlined,
   InsertChartOutlined,
@@ -18,7 +19,7 @@ const Sidebar = ({ position, zIndex, showEmergencyDetails, setShowEmergencyDetai
     { iconName: 'Realtime', icon: <FeedOutlined style={styles.iconStyle} /> },
     { iconName: 'Events', icon: <InsertChartOutlined style={styles.iconStyle} /> },
     { iconName: 'Devices', icon: <WorkOutline style={styles.iconStyle} /> },
-    { iconName: 'Realtime', icon: <FeedOutlined style={styles.iconStyle} /> },
+    { iconName: 'Domain', icon: <Dns style={styles.iconStyle} /> },
     { iconName: 'Settings', icon: <SmartDisplayOutlined style={styles.iconStyle} /> },
   ];
 
@@ -47,12 +48,11 @@ const styles = {
   sideBarContainer: {
     backgroundColor: '#323232',
     height: windowHeight / 1.1,
-    width: '6%',
     borderRadius: 12,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    paddingBlock: '2%',
+    padding: '1%',
     left: '1%',
     top: '1%'
   },
